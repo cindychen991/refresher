@@ -1,0 +1,36 @@
+{
+  "name": "Refresher",
+  "description": "网页刷新脚本",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "/refresh.png",
+    "32": "/refresh.png",
+    "64": "/refresh.png",
+    "128": "/refresh.png"
+  },
+  "browser_action": {
+    "default_icon": "refresh.png",
+    "default_title": "网页刷新插件"
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "refresh.js"
+      ],
+      "matches": ["https://www.google.com"], //todo 填写自定义网址
+      "run_at": "document_end"
+    }
+  ]
+}
